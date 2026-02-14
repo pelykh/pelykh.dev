@@ -8,6 +8,22 @@ import {
   faTypescript,
 } from "@fortawesome/free-brands-svg-icons";
 
+function ClaudeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4.709 15.955l4.72-2.756.08-.046 2.698-1.575c.062-.036.062-.127 0-.16341L9.51 9.84l-.08-.047-4.7-2.745a.08.08 0 0 0-.12.07v2.077c0 .03.016.057.042.071l2.83 1.652a.082.082 0 0 1 0 .142l-2.83 1.652a.082.082 0 0 0-.041.071v2.102a.08.08 0 0 0 .12.07h-.001z" />
+      <path d="M19.291 8.045l-4.72 2.756-.08.046-2.698 1.575c-.062.036-.062.127 0 .163l2.697 1.575.08.047 4.7 2.745a.08.08 0 0 0 .121-.07v-2.077a.082.082 0 0 0-.042-.071l-2.83-1.652a.082.082 0 0 1 0-.142l2.83-1.652a.082.082 0 0 0 .042-.071V8.115a.08.08 0 0 0-.121-.07h.001z" />
+      <path d="M14.504 6.09l-2.378-1.388a.164.164 0 0 0-.163 0L9.585 5.99a.082.082 0 0 0 0 .142l4.838 2.825a.082.082 0 0 0 .122-.071V6.162a.082.082 0 0 0-.04-.071z" />
+      <path d="M9.496 17.91l2.378 1.388a.164.164 0 0 0 .163 0l2.378-1.388a.082.082 0 0 0 0-.142l-4.838-2.825a.082.082 0 0 0-.122.071v2.825a.082.082 0 0 0 .04.071z" />
+    </svg>
+  );
+}
+
 const gridStyle = {
   backgroundImage:
     "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -57,7 +73,7 @@ export function BackgroundGrid({ children }: { children: ReactNode }) {
         </div>
 
         <div className="absolute top-[60%] right-[8%] opacity-70 animate-float-slow [animation-delay:200ms]">
-          <FontAwesomeIcon icon={faJs} className="text-2xl text-[#F7DF1E]" />
+          <ClaudeIcon className="w-8 h-8 text-[#D97757]" />
         </div>
       </div>
 
