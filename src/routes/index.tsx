@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import PixelFlower from "../components/PixelFlower";
 import { Footer } from "../components/Footer";
 import { BackgroundGrid } from "../components/BackgroundGrid";
 
