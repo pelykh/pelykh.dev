@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Footer = () => {
 	const { t } = useTranslation();
@@ -16,7 +15,6 @@ export const Footer = () => {
 				{t("footer.inProgress")}
 			</span>
 			<div className="flex items-center gap-4">
-				<LanguageSwitcher />
 				<a
 					href="https://github.com/pelykh"
 					target="_blank"

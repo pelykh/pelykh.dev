@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Languages } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 const languages = [
 	{ code: "en", label: "EN" },
@@ -10,8 +11,11 @@ export function LanguageSwitcher() {
 	const { i18n } = useTranslation();
 
 	return (
-		<div className="flex items-center gap-1">
-			<Languages size={16} className="text-white/60" />
+		<div className="fixed top-4 right-4 z-50 flex items-center gap-1">
+			<FontAwesomeIcon
+				icon={faLanguage}
+				className="text-white/60 text-lg"
+			/>
 			{languages.map((lang) => (
 				<button
 					key={lang.code}

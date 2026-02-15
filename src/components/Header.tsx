@@ -10,7 +10,6 @@ import {
 	Network,
 	X,
 } from "lucide-react";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +17,7 @@ export default function Header() {
 
 	return (
 		<>
-			<header className="p-4 flex items-center justify-between bg-gray-800 text-white shadow-lg">
+			<header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
 				<button
 					onClick={() => setIsOpen(true)}
 					className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
@@ -26,7 +25,6 @@ export default function Header() {
 				>
 					<Menu size={24} />
 				</button>
-				<LanguageSwitcher />
 			</header>
 
 			<aside
