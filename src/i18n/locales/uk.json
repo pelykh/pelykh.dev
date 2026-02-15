@@ -1,0 +1,79 @@
+{
+	"common": {
+		"submit": "Надіслати",
+		"reset": "Скинути",
+		"redirecting": "Перенаправлення..."
+	},
+	"home": {
+		"subtitle1": "FULL-STACK ІНЖЕНЕР",
+		"subtitle2": "УКРАЇНА"
+	},
+	"nav": {
+		"title": "Навігація",
+		"home": "Головна",
+		"tanstackQuery": "TanStack Query",
+		"simpleForm": "Проста форма",
+		"addressForm": "Форма адреси",
+		"storybook": "Storybook",
+		"openMenu": "Відкрити меню",
+		"closeMenu": "Закрити меню"
+	},
+	"footer": {
+		"copyright": "© {{year}} pelykh.dev",
+		"inProgress": "В розробці"
+	},
+	"storybook": {
+		"employeeForm": "Форма інформації про працівника",
+		"firstName": "Ім'я",
+		"firstNamePlaceholder": "Іван",
+		"lastName": "Прізвище",
+		"lastNamePlaceholder": "Петренко",
+		"employmentType": "Тип зайнятості",
+		"fullTime": "Повна зайнятість",
+		"partTime": "Часткова зайнятість",
+		"coffeeCups": "Чашок кави на день"
+	},
+	"tanstackQuery": {
+		"title": "TanStack Query — проста обробка промісів"
+	},
+	"simpleForm": {
+		"title": "Заголовок",
+		"description": "Опис",
+		"submitSuccess": "Форму успішно надіслано!"
+	},
+	"addressForm": {
+		"fullName": "Повне ім'я",
+		"email": "Електронна пошта",
+		"streetAddress": "Вулиця",
+		"city": "Місто",
+		"state": "Область",
+		"zipCode": "Поштовий індекс",
+		"country": "Країна",
+		"phone": "Телефон",
+		"phonePlaceholder": "123-456-7890",
+		"selectCountry": "Оберіть країну",
+		"submitSuccess": "Форму успішно надіслано!",
+		"countries": {
+			"US": "Сполучені Штати",
+			"CA": "Канада",
+			"UK": "Велика Британія",
+			"AU": "Австралія",
+			"DE": "Німеччина",
+			"FR": "Франція",
+			"JP": "Японія"
+		},
+		"validation": {
+			"fullNameRequired": "Повне ім'я обов'язкове",
+			"emailRequired": "Електронна пошта обов'язкова",
+			"emailInvalid": "Невірна адреса електронної пошти",
+			"streetRequired": "Адреса вулиці обов'язкова",
+			"cityRequired": "Місто обов'язкове",
+			"stateRequired": "Область обов'язкова",
+			"zipCodeRequired": "Поштовий індекс обов'язковий",
+			"zipCodeInvalid": "Невірний формат поштового індексу",
+			"countryRequired": "Країна обов'язкова",
+			"phoneRequired": "Номер телефону обов'язковий",
+			"phoneInvalid": "Невірний формат номера телефону"
+		}
+	}
+}

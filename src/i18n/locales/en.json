@@ -1,0 +1,79 @@
+{
+	"common": {
+		"submit": "Submit",
+		"reset": "Reset",
+		"redirecting": "Redirecting..."
+	},
+	"home": {
+		"subtitle1": "FULL-STACK ENGINEER",
+		"subtitle2": "BASED IN UKRAINE"
+	},
+	"nav": {
+		"title": "Navigation",
+		"home": "Home",
+		"tanstackQuery": "TanStack Query",
+		"simpleForm": "Simple Form",
+		"addressForm": "Address Form",
+		"storybook": "Storybook",
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu"
+	},
+	"footer": {
+		"copyright": "© {{year}} pelykh.dev",
+		"inProgress": "In progress"
+	},
+	"storybook": {
+		"employeeForm": "Employee Information Form",
+		"firstName": "First Name",
+		"firstNamePlaceholder": "John",
+		"lastName": "Last Name",
+		"lastNamePlaceholder": "Doe",
+		"employmentType": "Employment Type",
+		"fullTime": "Full Time",
+		"partTime": "Part Time",
+		"coffeeCups": "Coffee Cups Per Day"
+	},
+	"tanstackQuery": {
+		"title": "TanStack Query Simple Promise Handling"
+	},
+	"simpleForm": {
+		"title": "Title",
+		"description": "Description",
+		"submitSuccess": "Form submitted successfully!"
+	},
+	"addressForm": {
+		"fullName": "Full Name",
+		"email": "Email",
+		"streetAddress": "Street Address",
+		"city": "City",
+		"state": "State",
+		"zipCode": "Zip Code",
+		"country": "Country",
+		"phone": "Phone",
+		"phonePlaceholder": "123-456-7890",
+		"selectCountry": "Select a country",
+		"submitSuccess": "Form submitted successfully!",
+		"countries": {
+			"US": "United States",
+			"CA": "Canada",
+			"UK": "United Kingdom",
+			"AU": "Australia",
+			"DE": "Germany",
+			"FR": "France",
+			"JP": "Japan"
+		},
+		"validation": {
+			"fullNameRequired": "Full name is required",
+			"emailRequired": "Email is required",
+			"emailInvalid": "Invalid email address",
+			"streetRequired": "Street address is required",
+			"cityRequired": "City is required",
+			"stateRequired": "State is required",
+			"zipCodeRequired": "Zip code is required",
+			"zipCodeInvalid": "Invalid zip code format",
+			"countryRequired": "Country is required",
+			"phoneRequired": "Phone number is required",
+			"phoneInvalid": "Invalid phone number format"
+		}
+	}
+}
