@@ -29,7 +29,7 @@ const gridStyle = {
 
 export function BackgroundGrid({ children }: { children: ReactNode }) {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#0044CC] overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-[#0044CC] dark:bg-[#0c2d6e] overflow-hidden">
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={gridStyle}

@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
 	const { i18n } = useTranslation();
 
 	return (
-		<div className="fixed top-4 right-4 z-50 flex items-center gap-1">
+		<div className="flex items-center gap-1">
 			<FontAwesomeIcon
 				icon={faLanguage}
 				className="text-white/60 text-lg"
