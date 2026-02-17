@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as CoolodenkaRouteImport } from './routes/coolodenka'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperimentsTanstackFormRouteImport } from './routes/experiments/tanstack-form'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoStorybookRouteImport } from './routes/demo/storybook'
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
@@ -24,6 +25,11 @@ const CoolodenkaRoute = CoolodenkaRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperimentsTanstackFormRoute = ExperimentsTanstackFormRouteImport.update({
+  id: '/experiments/tanstack-form',
+  path: '/experiments/tanstack-form',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
 }
@@ -79,6 +88,7 @@ export interface FileRouteTypes {
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
+    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +97,7 @@ export interface FileRouteTypes {
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
+    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
   id:
@@ -95,6 +106,7 @@ export interface FileRouteTypes {
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
+    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
   fileRoutesById: FileRoutesById
@@ -104,6 +116,7 @@ export interface RootRouteChildren {
   CoolodenkaRoute: typeof CoolodenkaRoute
   DemoStorybookRoute: typeof DemoStorybookRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  ExperimentsTanstackFormRoute: typeof ExperimentsTanstackFormRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
 }
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiments/tanstack-form': {
+      id: '/experiments/tanstack-form'
+      path: '/experiments/tanstack-form'
+      fullPath: '/experiments/tanstack-form'
+      preLoaderRoute: typeof ExperimentsTanstackFormRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/tanstack-query': {
@@ -160,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoolodenkaRoute: CoolodenkaRoute,
   DemoStorybookRoute: DemoStorybookRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  ExperimentsTanstackFormRoute: ExperimentsTanstackFormRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,
   DemoFormSimpleRoute: DemoFormSimpleRoute,
 }

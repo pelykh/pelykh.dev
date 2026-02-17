@@ -2,7 +2,8 @@
 	"common": {
 		"submit": "Submit",
 		"reset": "Reset",
-		"redirecting": "Redirecting..."
+		"redirecting": "Redirecting...",
+		"backToHome": "Back to home"
 	},
 	"home": {
 		"subtitle1": "FULL-STACK ENGINEER",
@@ -20,7 +21,12 @@
 	},
 	"footer": {
 		"copyright": "© {{year}} pelykh.dev",
-		"inProgress": "In progress"
+		"scrollDown": "Scroll down"
+	},
+	"experiments": {
+		"title": "Latest experiments",
+		"tanstackFormDescription": "Form state management and validation with TanStack Form",
+		"tanstackFormPlaceholder": "This experiment is coming soon."
 	},
 	"storybook": {
 		"employeeForm": "Employee Information Form",
