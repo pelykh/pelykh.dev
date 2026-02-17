@@ -58,9 +58,14 @@ function App() {
 							className="group flex items-center justify-between rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 p-6 transition-all duration-300 hover:border-zinc-400 dark:hover:border-zinc-500 hover:shadow-lg"
 						>
 							<div>
-								<h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-1">
-									TanStack Form
-								</h3>
+								<div className="flex items-center gap-3 mb-1">
+									<h3 className="text-xl font-semibold text-zinc-900 dark:text-white">
+										TanStack Form
+									</h3>
+									<span className="text-xs text-zinc-400 dark:text-zinc-500">
+										Feb 17, 2025
+									</span>
+								</div>
 								<p className="text-sm text-zinc-500 dark:text-zinc-400">
 									{t("experiments.tanstackFormDescription")}
 								</p>
