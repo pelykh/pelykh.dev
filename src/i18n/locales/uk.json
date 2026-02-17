@@ -2,7 +2,8 @@
 	"common": {
 		"submit": "Надіслати",
 		"reset": "Скинути",
-		"redirecting": "Перенаправлення..."
+		"redirecting": "Перенаправлення...",
+		"backToHome": "На головну"
 	},
 	"home": {
 		"subtitle1": "FULL-STACK ІНЖЕНЕР",
@@ -20,7 +21,12 @@
 	},
 	"footer": {
 		"copyright": "© {{year}} pelykh.dev",
-		"inProgress": "В розробці"
+		"scrollDown": "Прокрутити вниз"
+	},
+	"experiments": {
+		"title": "Останні експерименти",
+		"tanstackFormDescription": "Керування станом форм та валідація з TanStack Form",
+		"tanstackFormPlaceholder": "Цей експеримент скоро з'явиться."
 	},
 	"storybook": {
 		"employeeForm": "Форма інформації про працівника",
