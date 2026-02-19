@@ -5,6 +5,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { LanguageSwitcher } from "../components/LanguageSwitcher";
 import { ThemeSwitcher } from "../components/ThemeSwitcher";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
+import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -24,6 +25,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
           position: "bottom-right",
         }}
         plugins={[
+          formDevtoolsPlugin(),
           {
             name: "Tanstack Router",
             render: <TanStackRouterDevtoolsPanel />,
