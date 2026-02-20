@@ -11,9 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as CoolodenkaRouteImport } from './routes/coolodenka'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ExperimentsTanstackFormRouteImport } from './routes/experiments/tanstack-form'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoStorybookRouteImport } from './routes/demo/storybook'
+import { Route as ExperimentsTanstackFormIndexRouteImport } from './routes/experiments/tanstack-form/index'
 import { Route as DemoFormSimpleRouteImport } from './routes/demo/form.simple'
 import { Route as DemoFormAddressRouteImport } from './routes/demo/form.address'
 
@@ -27,11 +27,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExperimentsTanstackFormRoute = ExperimentsTanstackFormRouteImport.update({
-  id: '/experiments/tanstack-form',
-  path: '/experiments/tanstack-form',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
   id: '/demo/tanstack-query',
   path: '/demo/tanstack-query',
@@ -42,6 +37,12 @@ const DemoStorybookRoute = DemoStorybookRouteImport.update({
   path: '/demo/storybook',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperimentsTanstackFormIndexRoute =
+  ExperimentsTanstackFormIndexRouteImport.update({
+    id: '/experiments/tanstack-form/',
+    path: '/experiments/tanstack-form/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DemoFormSimpleRoute = DemoFormSimpleRouteImport.update({
   id: '/demo/form/simple',
   path: '/demo/form/simple',
@@ -58,18 +59,18 @@ export interface FileRoutesByFullPath {
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
+  '/experiments/tanstack-form/': typeof ExperimentsTanstackFormIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
+  '/experiments/tanstack-form': typeof ExperimentsTanstackFormIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +78,9 @@ export interface FileRoutesById {
   '/coolodenka': typeof CoolodenkaRoute
   '/demo/storybook': typeof DemoStorybookRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
-  '/experiments/tanstack-form': typeof ExperimentsTanstackFormRoute
   '/demo/form/address': typeof DemoFormAddressRoute
   '/demo/form/simple': typeof DemoFormSimpleRoute
+  '/experiments/tanstack-form/': typeof ExperimentsTanstackFormIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +89,27 @@ export interface FileRouteTypes {
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
-    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
+    | '/experiments/tanstack-form/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
-    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
+    | '/experiments/tanstack-form'
   id:
     | '__root__'
     | '/'
     | '/coolodenka'
     | '/demo/storybook'
     | '/demo/tanstack-query'
-    | '/experiments/tanstack-form'
     | '/demo/form/address'
     | '/demo/form/simple'
+    | '/experiments/tanstack-form/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,9 +117,9 @@ export interface RootRouteChildren {
   CoolodenkaRoute: typeof CoolodenkaRoute
   DemoStorybookRoute: typeof DemoStorybookRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
-  ExperimentsTanstackFormRoute: typeof ExperimentsTanstackFormRoute
   DemoFormAddressRoute: typeof DemoFormAddressRoute
   DemoFormSimpleRoute: typeof DemoFormSimpleRoute
+  ExperimentsTanstackFormIndexRoute: typeof ExperimentsTanstackFormIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -137,13 +138,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/experiments/tanstack-form': {
-      id: '/experiments/tanstack-form'
-      path: '/experiments/tanstack-form'
-      fullPath: '/experiments/tanstack-form'
-      preLoaderRoute: typeof ExperimentsTanstackFormRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/demo/tanstack-query': {
       id: '/demo/tanstack-query'
       path: '/demo/tanstack-query'
@@ -156,6 +150,13 @@ declare module '@tanstack/react-router' {
       path: '/demo/storybook'
       fullPath: '/demo/storybook'
       preLoaderRoute: typeof DemoStorybookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiments/tanstack-form/': {
+      id: '/experiments/tanstack-form/'
+      path: '/experiments/tanstack-form'
+      fullPath: '/experiments/tanstack-form/'
+      preLoaderRoute: typeof ExperimentsTanstackFormIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/form/simple': {
@@ -180,9 +181,9 @@ const rootRouteChildren: RootRouteChildren = {
   CoolodenkaRoute: CoolodenkaRoute,
   DemoStorybookRoute: DemoStorybookRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
-  ExperimentsTanstackFormRoute: ExperimentsTanstackFormRoute,
   DemoFormAddressRoute: DemoFormAddressRoute,
   DemoFormSimpleRoute: DemoFormSimpleRoute,
+  ExperimentsTanstackFormIndexRoute: ExperimentsTanstackFormIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
