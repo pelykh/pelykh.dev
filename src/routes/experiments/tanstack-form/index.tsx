@@ -1,6 +1,14 @@
 import { useForm, type AnyFieldApi } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import {
+  onboardingForm,
+  type OnboardingFormType,
+  type OnboardingStep,
+} from "./-app/types";
+import { useAppForm } from "./-app/hooks/form";
+import { onboardingFormOpts } from "./-app/components/shared-form";
+import React from "react";
 
 export const Route = createFileRoute("/experiments/tanstack-form/")({
   component: TanstackFormExperiment,
@@ -19,12 +27,10 @@ function FieldInfo({ field }: { field: AnyFieldApi }) {
 
 function TanstackFormExperiment() {
   const { t } = useTranslation();
+  const [step, setStep] = React.useState<OnboardingStep>("account");
 
-  const form = useForm({
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-    },
+  const form = useAppForm({
+    ...onboardingFormOpts,
     onSubmit: async ({ value }) => {
       // Do something with form data
       console.log(value);
@@ -37,86 +43,17 @@ function TanstackFormExperiment() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          e.stopPropagation();
           form.handleSubmit();
         }}
       >
-        <div>
-          {/* A type-safe field component*/}
-          <form.Field
-            name="firstName"
-            validators={{
-              onChange: ({ value }) =>
-                !value
-                  ? "A first name is required"
-                  : value.length < 3
-                    ? "First name must be at least 3 characters"
-                    : undefined,
-              onChangeAsyncDebounceMs: 500,
-              onChangeAsync: async ({ value }) => {
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                return (
-                  value.includes("error") && 'No "error" allowed in first name'
-                );
-              },
-            }}
-            children={(field) => {
-              // Avoid hasty abstractions. Render props are great!
-              return (
-                <>
-                  <label htmlFor={field.name}>First Name:</label>
-                  <input
-                    id={field.name}
-                    name={field.name}
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                  />
-                  <FieldInfo field={field} />
-                </>
-              );
-            }}
-          />
-        </div>
-        <div>
-          <form.Field
-            name="lastName"
-            children={(field) => (
-              <>
-                <label htmlFor={field.name}>Last Name:</label>
-                <input
-                  id={field.name}
-                  name={field.name}
-                  value={field.state.value}
-                  onBlur={field.handleBlur}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                />
-                <FieldInfo field={field} />
-              </>
-            )}
-          />
-        </div>
-        <form.Subscribe
-          selector={(state) => [state.canSubmit, state.isSubmitting]}
-          children={([canSubmit, isSubmitting]) => (
-            <>
-              <button type="submit" disabled={!canSubmit}>
-                {isSubmitting ? "..." : "Submit"}
-              </button>
-              <button
-                type="reset"
-                onClick={(e) => {
-                  // Avoid unexpected resets of form elements (especially <select> elements)
-                  e.preventDefault();
-                  form.reset();
-                }}
-              >
-                Reset
-              </button>
-            </>
-          )}
-        />
+        {step === "account" && <div>AccountStep</div>}
+        {step === "profile" && <div>AccountStep</div>}
+        {step === "notifications" && <div>AccountStep</div>}
       </form>
+
+      <form.AppForm>
+        <form.SubscribeButton label={"Submit"} />
+      </form.AppForm>
     </div>
   );
 }
