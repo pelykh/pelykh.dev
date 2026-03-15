@@ -7,10 +7,23 @@ import tailwindcss from "@tailwindcss/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { fileURLToPath, URL } from "node:url";
 
+const coolodenkaStaticPlugin = {
+	name: "coolodenka-static",
+	configureServer(server: import("vite").ViteDevServer) {
+		server.middlewares.use((req, _res, next) => {
+			if (req.url === "/coolodenka" || req.url === "/coolodenka/") {
+				req.url = "/coolodenka.html";
+			}
+			next();
+		});
+	},
+};
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/",
   plugins: [
+    coolodenkaStaticPlugin,
     devtools(),
     tanstackRouter({
       target: "react",
